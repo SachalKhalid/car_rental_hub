@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block head_title %}profile{% endblock head_title %}
+
+{% block content %}
+
+    <header>
+        {% if user.role == 'Admin' %}
+            <h1>User List</h1>
+            <nav>
+                <a href="{% url 'list' %}">List of Users</a>
+            </nav>
+        {% endif %}
+    </header>
+
+    <main>
+        <h1>Profile</h1>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone Number: {{ user.phone_number }}</p>
+        <p>Address: {{ user.address }}</p>
+        <p>Role: {{ user.role }}</p>
+        <p><a href="{% url 'update' user.id %}">update user</a></p>
+        <a href="{% url 'login' %}">Logout</a>
+    </main>
+
+{% endblock content %}
+
+
