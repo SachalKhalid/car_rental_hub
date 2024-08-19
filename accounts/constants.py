@@ -1,7 +1,15 @@
-# Choices for user roles in the system. These are used for defining user roles in the application.
-USER_ROLE_CHOICES = [
+# All user roles, including 'Admin', 'Customer', and 'ShopOwner'.
+# These are typically used in the admin panel where an administrator has the privilege to assign any role.
+ADMIN_USER_ROLE_CHOICES = [
     ('Customer', 'Customer'),  # Regular user of the application
     ('Admin', 'Admin'),  # Administrator with higher privileges
+    ('ShopOwner', 'ShopOwner'),  # User who owns and manages a shop
+]
+
+# Restricted user roles available to the public.
+# These are used in public-facing registration forms where the 'Admin' role is excluded.
+PUBLIC_USER_ROLE_CHOICES = [
+    ('Customer', 'Customer'),  # Regular user of the application
     ('ShopOwner', 'ShopOwner'),  # User who owns and manages a shop
 ]
 
@@ -31,4 +39,3 @@ USER_PASSWORD_FIELD = 'password'
 # Constants for form field labels
 EMAIL_FIELD_LABEL = 'Email'
 PASSWORD_FIELD_LABEL = 'Password'
-

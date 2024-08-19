@@ -24,6 +24,10 @@ class UserAccountCreationForm(UserCreationForm):
         model = User
         fields = USER_CREATION_FORM_FIELDS
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['role'].choices = PUBLIC_USER_ROLE_CHOICES
+
 
 class EmailAuthenticationForm(forms.Form):
     """
