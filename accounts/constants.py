@@ -13,6 +13,19 @@ PUBLIC_USER_ROLE_CHOICES = [
     ('ShopOwner', 'ShopOwner'),  # User who owns and manages a shop
 ]
 
+# Fieldsets for the admin interface
+USER_CREDENTIALS_FIELDS = ('username', 'email', 'password')
+PERSONAL_INFO_FIELDS = ('phone_number', 'role', 'address')
+IMPORTANT_DATES_FIELDS = ('last_login', 'date_joined')
+
+# Labels or sections for the fieldsets
+USER_CREDENTIALS_LABEL = 'User Credentials'
+PERSONAL_INFO_LABEL = 'Personal info'
+IMPORTANT_DATES_LABEL = 'Important dates'
+
+# Define ordering
+ORDERING_FIELDS = ('email',)
+
 # String constant representing the 'Admin' role. Used for comparison and checks.
 ADMIN = 'Admin'
 
